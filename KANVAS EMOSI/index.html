@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmosiKanvas | Lukis Perasaan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+  <div class="brand">
+    <img src="gambar/LOGO KANVAS EMOSI.PNG"
+         alt="Logo EmosiKanvas"
+         class="brand-logo">
+
+    <div>
+      <span class="eyebrow">RUANG EKSPRESI EMOSI</span>
+      <h1>EmosiKanvas</h1>
+    </div>
+  </div>
+
+  <div class="top-note">
+    Lukis Perasaan · Dengarkan Emosi · Kenali Diri
+  </div>
+</header>
+
+  <main class="container">
+    <section class="welcome-section">
+    <div class="welcome-content">
+        <p class="eyebrow">SELAMAT DATANG, KAWAN!</p>
+
+        <h2>Bagaimana perasaan kamu hari ini?</h2>
+
+        <p>
+            Pilih emosi yang paling dekat dengan perasaan kamu.
+            Tiada jawapan betul atau salah.
+        </p>
+    </div>
+
+    <div class="welcome-art">
+        <img
+            src="./LOGO HEADER/logo header.png"
+            alt="Ilustrasi comel EmosiKanvas"
+            class="welcome-image">
+    </div>
+</section>
+
+    <div class="emotion-container">
+
+    <button class="emotion-card" data-emotion="Sedih">
+        <img src="./GAMBAR EMOSI/sedih.png">
+        <span>Sedih</span>
+    </button>
+
+    <button class="emotion-card" data-emotion="Gembira">
+        <img src="./GAMBAR EMOSI/gembira.png">
+        <span>Gembira</span>
+    </button>
+
+    <button class="emotion-card" data-emotion="Marah">
+        <img src="./GAMBAR EMOSI/marah.png">
+        <span>Marah</span>
+    </button>
+
+    <button class="emotion-card" data-emotion="Takut">
+        <img src="./GAMBAR EMOSI/takut.png">
+        <span>Takut</span>
+    </button>
+
+    <button class="emotion-card" data-emotion="Tenang">
+        <img src="./GAMBAR EMOSI/tenang.png" >
+        <span>Tenang</span>
+    </button>
+
+</div>
+    </section>
+
+    <section class="workspace">
+      <div class="canvas-panel panel">
+        <div class="panel-heading">
+          <div><span class="eyebrow">KANVAS KREATIF</span><h3>Luahkan melalui warna</h3></div>
+          <span class="live-tag"><span></span> Ruang selamat</span>
+        </div>
+        <div class="canvas-wrap"><canvas id="drawingCanvas" aria-label="Kanvas lukisan digital"></canvas></div>
+        <div class="toolbar">
+          <div class="tool-group">
+            <label for="brushColor">Warna</label><input id="brushColor" type="color" value="#6b72d6" title="Pilih warna berus">
+          </div>
+          <div class="tool-group">
+            <label for="brushSize">Saiz berus <span id="sizeValue">8</span></label><input id="brushSize" type="range" min="2" max="40" value="8">
+          </div>
+          <button class="tool-btn" id="eraserBtn">🧽 Pemadam</button>
+          <button class="tool-btn" id="undoBtn">↶ Undur</button>
+          <button class="tool-btn" id="redoBtn">↷ Ulang</button>
+          <button class="tool-btn" id="clearBtn">🗑 Kosongkan</button>
+        </div>
+        <div class="canvas-actions">
+          <button class="btn btn-secondary" id="downloadBtn">⬇ Simpan lukisan (PNG)</button>
+          <button class="btn btn-primary" id="finishBtn">Selesai melukis →</button>
+        </div>
+      </div>
+
+      <aside class="side-column">
+       <section class="music-section">
+
+    <div class="music-header">
+        <h2>🎵 Ruang Muzik Emosi</h2>
+        <p>Pilih muzik yang menemani perjalanan emosi kamu.</p>
+    </div>
+
+    <!-- Tab Muzik -->
+    <div class="music-tabs">
+
+        <button class="music-tab active" data-mode="spotify">
+            🟢 Spotify
+        </button>
+
+        <button class="music-tab" data-mode="teacher">
+            🎵 Playlist Guru
+        </button>
+
+        <button class="music-tab" data-mode="student">
+            🎧 Muzik Saya
+        </button>
+
+    </div>
+
+    <!-- Spotify  -->
+<div id="spotifyMusic" class="music-panel">
+
+    <h3>🟢 Spotify — Muzik Mengikut Emosi</h3>
+
+    <p>Pilih emosi yang menggambarkan perasaan kamu.</p>
+
+    <!-- Pilihan emosi -->
+    <div class="emotion-music-tabs">
+
+        <button class="emotion-music-btn active"
+                data-emotion="sad">
+            😢 Muzik Sedih
+        </button>
+
+        <button class="emotion-music-btn"
+                data-emotion="happy">
+            😊 Muzik Gembira
+        </button>
+
+    </div>
+
+    <!-- Playlist Sedih -->
+    <div id="spotifySad" class="spotify-emotion-playlist">
+
+        <h4>😢 Playlist Sedih</h4>
+
+        <p>Luangkan masa untuk memahami dan menerima emosi kamu.</p>
+
+        <iframe
+            src="https://open.spotify.com/embed/playlist/5SDPei4m0IuABIYRsDJcBC?utm_source=generator&si=7fabbd383c9949d4"
+            width="100%"
+            height="352"
+            frameborder="0"
+            style="border-radius:12px"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <!-- Playlist Gembira -->
+    <div id="spotifyHappy"
+         class="spotify-emotion-playlist hidden">
+
+        <h4>😊 Playlist Gembira</h4>
+
+        <p>Nikmati muzik yang membawa keceriaan dan semangat positif.</p>
+
+        <iframe
+            src="https://open.spotify.com/embed/playlist/1HVP7E8RkpieiGSxvATJbU?utm_source=generator&si=da7c4c82c0fe424d"
+            width="100%"
+            height="352"
+            frameborder="0"
+            style="border-radius:12px"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</div>
+    </div>
+
+    <!-- Playlist Guru -->
+    <div id="teacherMusic" class="music-panel hidden">
+
+        <h3>Playlist Guru</h3>
+        <p>Pilih muzik yang disediakan oleh guru.</p>
+
+        <select id="musicSelect">
+            <option value="">— Pilih muzik —</option>
+        </select>
+
+    </div>
+
+    <!-- Muzik Saya -->
+    <div id="studentMusic" class="music-panel hidden">
+
+        <h3>Muzik Saya</h3>
+        <p>Muat naik muzik kegemaran anda sendiri.</p>
+
+        <input
+            type="file"
+            id="musicUpload"
+            accept="audio/*">
+
+    </div>
+
+    <!-- Kawalan Audio untuk Playlist Guru dan Muzik Saya -->
+    <div id="audioControls" class="audio-controls">
+
+        <button id="playBtn" type="button">▶</button>
+
+        <div class="audio-info">
+            <strong id="musicTitle">Belum memilih muzik</strong>
+            <span id="musicStatus">Pilih muzik untuk dimainkan</span>
+        </div>
+
+        <label for="volume">Volume</label>
+
+        <input
+            type="range"
+            id="volume"
+            min="0"
+            max="100"
+            value="50">
+
+        <span id="volumeValue">50%</span>
+
+        <label>
+            <input type="checkbox" id="loopMusic">
+            Ulang muzik
+        </label>
+
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+</section>
+
+</div>
+  </div>
+
+</section>
+
+        <section class="panel reflection-panel">
+          <span class="eyebrow">INGAT</span>
+          <h3>Setiap perasaan itu penting.</h3>
+          <p>Kamu boleh melukis apa sahaja. Gunakan warna, bentuk dan garisan untuk menceritakan perasaan kamu.</p>
+          <div class="affirmation">“Saya berhak untuk merasa dan meluahkan emosi saya.”</div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="reflection panel hidden" id="reflectionSection">
+      <div class="panel-heading"><div><span class="eyebrow">REFLEKSI KENDIRI</span><h2>Lukisan saya bercerita…</h2></div><span class="reflection-emoji">💭</span></div>
+      <p class="muted">Jawab jika kamu selesa. Kamu tidak perlu berkongsi perkara yang kamu belum bersedia ceritakan.</p>
+      <div class="reflection-fields">
+        <label>Selepas melukis, saya berasa…
+          <select id="afterFeeling"><option>Lebih tenang</option><option>Lebih gembira</option><option>Masih sedih</option><option>Masih marah</option><option>Masih risau</option><option>Tidak pasti</option></select>
+        </label>
+        <label>Apakah yang ingin kamu ceritakan tentang lukisan ini?
+          <textarea id="reflectionText" rows="3" placeholder="Lukisan saya menggambarkan…"></textarea>
+        </label>
+      </div>
+      <div class="canvas-actions">
+        <button class="btn btn-secondary" id="backToCanvas">← Kembali melukis</button>
+        <button class="btn btn-primary" id="saveReflection">Simpan refleksi pada peranti</button>
+      </div>
+      <p class="privacy-note">🔒 Refleksi ini disimpan sebagai fail pada peranti kamu sahaja. Ia tidak dihantar ke mana-mana pelayan.</p>
+    </section>
+    <footer>EmosiKanvas · Aktiviti ekspresi emosi melalui seni digital<br><small>Aktiviti ini bukan alat diagnosis. Jika kamu berasa tidak selesa, berhenti dan berbincang dengan guru atau kaunselor yang dipercayai.</small></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
